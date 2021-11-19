@@ -1,11 +1,13 @@
 class Find {
 	static String vowels(String sentence) {
-		char[] allVowels = {'a','e','i','o','u'};
+		String[] allVowels = {"a","e","i","o","u"};
 		String containedVowels = "";
 
-		for (char i:allVowels) {
-			if (sentence.toLowerCase().indexOf(i) > -1) {
-				containedVowels += i;
+		for (String i:allVowels){
+			for (String j:sentence.toLowerCase().split("")) {
+				if (i.equals(j)) {
+					containedVowels += i;
+				}
 			}
 		}
 		String[] vowelArray = containedVowels.split("");
